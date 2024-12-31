@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { PostTags } from "../components/PostTags";
+import Home from "./Home.astro";
+
+type Props = CollectionEntry<"posts">;
+const { data } = Astro.props;
+const { title, date, tags } = data;
+const jsDate = new Date(date);
+---
+
+<Home title={title}>
+  <h1 class="mb-0">{title}</h1>
+  <p class="flex gap-2">
+    {date && <span>{jsDate.toLocaleDateString()}</span>}
+    <span aria-hidden="true">/</span>
+    {
+      tags.length > 0 && (
+        <span>
+          tagged: <PostTags tags={tags} />
+        </span>
+      )
+    }
+  </p>
+  <div class="prose">
+    <slot />
+  </div>
+</Home>

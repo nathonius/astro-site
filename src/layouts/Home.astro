@@ -1,0 +1,26 @@
+---
+import type { MarkdownLayoutProps } from "astro";
+import { Footer } from "../components/Footer";
+import Header from "../components/Header.astro";
+import Base from "./Base.astro";
+
+interface AcceptedProps {
+  title: string;
+  active?: "home" | "posts" | "projects" | "contact" | "search";
+}
+type Props = Partial<AcceptedProps & MarkdownLayoutProps<AcceptedProps>>;
+
+const { frontmatter, title, active } = Astro.props;
+const _title = frontmatter?.title ?? title;
+const _active = frontmatter?.active ?? active;
+---
+
+<Base title={_title}>
+  <div class="flex flex-col items-center">
+    <Header active={_active} />
+    <main class="prose m-2 min-w-[65ch]">
+      <slot />
+    </main>
+    <Footer />
+  </div>
+</Base>

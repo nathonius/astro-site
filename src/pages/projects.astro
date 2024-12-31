@@ -1,0 +1,59 @@
+---
+import Home from "../layouts/Home.astro";
+import Project from "../components/Project.astro";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const boomerShooters: typeof projects = [];
+const obsidian: typeof projects = [];
+const foundry: typeof projects = [];
+const otherProjects: typeof projects = [];
+
+for (const project of projects) {
+  if (project.data.tags.length === 0) {
+    otherProjects.push(project);
+  } else if (project.data.tags.includes("boomer-shooter")) {
+    boomerShooters.push(project);
+  } else if (project.data.tags.includes("obsidian")) {
+    obsidian.push(project);
+  } else if (project.data.tags.includes("foundryvtt")) {
+    foundry.push(project);
+  } else {
+    console.log(`Unknown project type: ${project.data.tags.join(", ")}`);
+  }
+}
+---
+
+<Home>
+  <h1>Projects</h1>
+  <p>
+    These are some projects I have created or worked on. Some are more
+    maintained than others, but everything is open source and freely licensed,
+    so please feel free to steal.
+  </p>
+  <h2>Boomer Shooters</h2>
+  <p>
+    I love Doom, Quake, anything with fast movement, fun guns, and crunchy
+    pixels. I have a couple of related projects:
+  </p>
+  {boomerShooters.map((p) => <Project {...p.data} />)}
+  <div class="divider"></div>
+  <h2>Obsidian Plugins</h2>
+  <p>
+    I maintain the following plugins for <a href="https://obsidian.md/"
+      >Obsidian</a
+    >.
+  </p>
+  {obsidian.map((p) => <Project {...p.data} />)}
+  <div class="divider"></div>
+  <h2>Foundry VTT Modules</h2>
+  <p>
+    I am the author of the following modules for <a
+      href="https://foundryvtt.com/">Foundry VTT</a
+    >.
+  </p>
+  {foundry.map((p) => <Project {...p.data} />)}
+  <div class="divider"></div>
+  <h2>Other Projects</h2>
+  {otherProjects.map((p) => <Project {...p.data} />)}
+</Home>

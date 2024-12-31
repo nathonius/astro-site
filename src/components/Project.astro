@@ -1,0 +1,32 @@
+---
+interface Props {
+  id: string;
+  tags: string[];
+  date: string;
+  summary: string;
+  githubLink: string;
+  projectStatus: "Maintenance" | "Active" | "Archived";
+  title: string;
+  projectLink?: string | undefined;
+}
+
+const { title, date, summary, githubLink, projectStatus, projectLink } =
+  Astro.props;
+---
+
+<h3 class="mb-0">{title}</h3>
+<small>Started {date}</small>
+<p>{summary}</p>
+<p><span class="font-bold">Project Status:</span> {projectStatus}</p>
+<ul>
+  <li>
+    <a href={githubLink}>View on GitHub</a>
+  </li>
+  {
+    projectLink && (
+      <li>
+        <a href={projectLink}>Project Page</a>
+      </li>
+    )
+  }
+</ul>

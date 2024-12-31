@@ -1,0 +1,98 @@
+---
+import { SunMoon, Search } from "lucide-astro";
+
+interface Props {
+  active?: "home" | "posts" | "projects" | "contact" | "search";
+}
+
+const { active } = Astro.props;
+---
+
+<header>
+  <nav
+    class="navbar bg-base-100 gap-1 md:gap-2"
+    aria-label="Primary navigation"
+  >
+    <a
+      class:list={["btn btn-ghost", { "btn-active": active === "home" }]}
+      href="/"
+    >
+      Home
+    </a>
+    <a
+      class:list={[
+        "btn btn-ghost",
+        {
+          "btn-active": active === "posts",
+        },
+      ]}
+      href="/posts/"
+    >
+      Posts
+    </a>
+    <a
+      class:list={[
+        "btn btn-ghost",
+        {
+          "btn-active": active === "projects",
+        },
+      ]}
+      href="/projects/"
+    >
+      Projects
+    </a>
+    <a
+      class:list={[
+        "btn btn-ghost hidden md:flex",
+        {
+          "btn-active": active === "contact",
+        },
+      ]}
+      href="/contact/"
+    >
+      Contact
+    </a>
+    <a
+      class:list={[
+        "btn btn-ghost hidden md:flex",
+        {
+          "btn-active": active === "search",
+        },
+      ]}
+      href="/search/"
+    >
+      Search
+    </a>
+    <div class="flex gap-2">
+      <a
+        id="search-icon"
+        href="/search/"
+        class:list={[
+          "btn btn-ghost md:hidden",
+          {
+            "btn-active": active === "search",
+          },
+        ]}
+      >
+        <span class="sr-only">Search</span>
+        <Search />
+      </a>
+      <div class="tooltip tooltip-bottom" data-tip="Toggle theme">
+        <button
+          id="header--theme-toggle"
+          type="button"
+          class="btn btn-ghost"
+          aria-label="Toggle theme"
+        >
+          <SunMoon />
+        </button>
+        <script>
+          const themeToggle = document.querySelector("#header--theme-toggle");
+          themeToggle?.addEventListener("click", () => {
+            (window as any).theme.toggle();
+          });
+        </script>
+      </div>
+    </div>
+  </nav>
+</header>

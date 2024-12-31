@@ -1,0 +1,11 @@
+---
+import type { CollectionEntry } from "astro:content";
+
+type Props = CollectionEntry<"posts">;
+const { data } = Astro.props;
+const { slug, title, summary, date, update_date } = data;
+---
+
+<h2><a href={`/posts/${slug}`}>{title}</a></h2>
+<p>{summary}</p>
+<small>{new Date(date).toLocaleDateString()}</small>

@@ -1,0 +1,121 @@
+[
+  {
+    "id": "alloy",
+    "title": "Alloy",
+    "tags": [],
+    "summary": "Alloy is a color theme available for VS Code, Prismjs, Windows Terminal, and ConEmu.",
+    "githubLink": "https://github.com/nathonius/alloy-theme",
+    "projectLink": "https://marketplace.visualstudio.com/items?itemName=officerhalf.alloy-theme",
+    "date": "2018-06-07",
+    "projectStatus": "Maintenance"
+  },
+  {
+    "id": "obsidian-auto-class",
+    "title": "Auto Class",
+    "tags": ["obsidian"],
+    "summary": "Automatically apply CSS classes to the markdown based on a note's path and tags.",
+    "githubLink": "https://github.com/nathonius/obsidian-auto-class",
+    "projectLink": "obsidian://show-plugin?id=auto-class",
+    "date": "2018-06-07",
+    "projectStatus": "Maintenance"
+  },
+  {
+    "id": "obsidian-collapse-all",
+    "title": "Collapse All",
+    "tags": ["obsidian"],
+    "summary": "When your Obsidian file explorer is overloaded with open folders, close them all with a single click or command. Or, if you want to explore your folder tree, expand all folders.",
+    "githubLink": "https://github.com/nathonius/obsidian-collapse-all",
+    "projectLink": "obsidian://show-plugin?id=obsidian-collapse-all-plugin",
+    "date": "2021-05-23",
+    "projectStatus": "Maintenance"
+  },
+  {
+    "id": "crypt-ui",
+    "title": "Crypt UI",
+    "tags": [],
+    "summary": "A sci-fi themed CSS component library, written mainly to support implementation of Cryptomancer FVTT.",
+    "githubLink": "https://github.com/nathonius/crypt-ui",
+    "projectLink": "https://www.crypt.nathan-smith.org/",
+    "date": "2022-04-16",
+    "projectStatus": "Archived"
+  },
+  {
+    "id": "cryptomancer-fvtt",
+    "tags": ["foundryvtt"],
+    "summary": "An implementation of the Cryptomancer RPG system for Foundry Virtual Tabletop.",
+    "githubLink": "https://github.com/nathonius/cryptomancer-fvtt",
+    "projectLink": "https://foundryvtt.com/packages/cryptomancer",
+    "date": "2022-03-13",
+    "projectStatus": "Archived",
+    "title": "Cryptomancer FVTT"
+  },
+  {
+    "id": "doom-wads",
+    "tags": ["boomer-shooter"],
+    "summary": "A repo of any and all maps I make for Doom. So far, only one map, but I certainly plan to make more!",
+    "githubLink": "https://github.com/nathonius/wads",
+    "date": "2024-11-30",
+    "projectStatus": "Active",
+    "title": "Doom WADs"
+  },
+  {
+    "id": "obsidian-github-link",
+    "tags": ["obsidian"],
+    "summary": "Transform boring GitHub links in notes into tags with rich content from GitHub, and query issues and pull requests within your notes.",
+    "githubLink": "https://github.com/nathonius/obsidian-githubLink",
+    "projectLink": "obsidian://show-plugin?id=githubLink",
+    "date": "2024-02-01",
+    "projectStatus": "Active",
+    "title": "GitHub Link"
+  },
+  {
+    "id": "go-to-combatant-fvtt",
+    "tags": ["foundryvtt"],
+    "summary": "Patches the Foundry VTT combat tracker so that clicking on a combatant pans to that combatant - even if they are on another scene.",
+    "githubLink": "https://github.com/nathonius/foundryvtt-go-to-combatant",
+    "projectLink": "https://foundryvtt.com/packages/go-to-combatant",
+    "date": "2022-09-15",
+    "projectStatus": "Maintenance",
+    "title": "Go to Combatant"
+  },
+  {
+    "id": "homebrewery-vs-code",
+    "tags": [],
+    "summary": "Homebrewery VS Code is a VS Code extension for rendering markdown in the style of the Homebrewery for creating Dungeons and Dragons 5e homebrew content inside VS Code.",
+    "githubLink": "https://github.com/nathonius/homebrewery-vscode",
+    "projectLink": "https://marketplace.visualstudio.com/items?itemName=officerhalf.homebrewery-vscode",
+    "date": "2018-05-23",
+    "projectStatus": "Archived",
+    "title": "Homebrewery VS Code"
+  },
+  {
+    "id": "insert-journal-page-fvtt",
+    "tags": ["foundryvtt"],
+    "summary": "Patches the Foundry VTT journal so that creating a new page in a journal entry places it after the currently viewed page, not at the end of the list.",
+    "githubLink": "https://github.com/nathonius/foundryvtt-insert-journal-page",
+    "projectLink": "https://foundryvtt.com/packages/insert-journal-page",
+    "date": "2022-09-28",
+    "projectStatus": "Maintenance",
+    "title": "Insert Journal Page"
+  },
+  {
+    "id": "obsidian-trello",
+    "tags": ["obsidian"],
+    "summary": "Connect your Trello cards with your Obsidian notes to see and update labels, comments, and checklists from within Obsidian.",
+    "githubLink": "https://github.com/nathonius/obsidian-trello",
+    "projectLink": "obsidian://show-plugin?id=obsidian-trello",
+    "date": "2021-09-01",
+    "projectStatus": "Maintenance",
+    "title": "Obsidian Trello"
+  },
+  {
+    "id": "phobos-launcher",
+    "tags": ["boomer-shooter"],
+    "summary": "A fancy, cross platform launcher for Doom and its descendants",
+    "githubLink": "https://github.com/nathonius/phobos-launcher",
+    "projectLink": "https://github.com/nathonius/phobos-launcher/releases",
+    "date": "2024-11-24",
+    "projectStatus": "Active",
+    "title": "Phobos Launcher"
+  }
+]
