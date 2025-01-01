@@ -1,26 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@layer components {
-  .callout {
-    @apply flex flex-col gap-3 p-2 rounded-md bg-base-200;
-  }
-  .callout .callout-title {
-    @apply flex gap-2 items-center;
-  }
-  .callout-content > :first-child {
-    @apply mt-0;
-  }
-  .callout-content > :last-child {
-    @apply mb-0;
-  }
-
-  .callout[data-callout="note"] {
-    @apply rounded-tl-none rounded-bl-none border-l-4 border-l-accent;
-  }
-
-  .callout[data-callout="note"] .callout-title {
-    @apply text-accent;
-  }
-}

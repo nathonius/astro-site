@@ -1,5 +1,6 @@
 import { defineConfig } from "astro/config";
 
+import remarkObsidian from "remark-obsidian";
 import preact from "@astrojs/preact";
 import tailwind from "@astrojs/tailwind";
 import pagefind from "astro-pagefind";
@@ -29,6 +30,7 @@ export default defineConfig({
         },
       ],
     },
+    remarkPlugins: [remarkObsidian],
   },
   integrations: [
     pagefind(),

@@ -3,3 +3,7 @@ declare module "@pagefind/default-ui" {
     constructor(arg: any);
   }
 }
+
+declare module "remark-obsidian" {
+  export default {} as any;
+}

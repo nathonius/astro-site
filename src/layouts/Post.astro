@@ -2,6 +2,7 @@
 import type { CollectionEntry } from "astro:content";
 import PostTags from "../components/PostTags.astro";
 import Home from "./Home.astro";
+import "../styles/callouts.css";
 
 type Props = CollectionEntry<"posts">;
 const { data } = Astro.props;
