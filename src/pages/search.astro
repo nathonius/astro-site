@@ -1,0 +1,11 @@
+---
+import Pagefind from "../components/Pagefind.astro";
+import Home from "../layouts/Home.astro";
+import "../styles/search.css";
+---
+
+<Home title="Search" active="search">
+  <div class="prose">
+    <Pagefind id="search-component" uiOptions={{ showImages: false }} />
+  </div>
+</Home>

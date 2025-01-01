@@ -2,6 +2,7 @@
 title: Contact
 layout: ../layouts/Home.astro
 summary: How to get in touch with Nathan Smith.
+active: contact
 ---
 
 # Contact

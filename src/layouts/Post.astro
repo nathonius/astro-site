@@ -9,7 +9,7 @@ const { title, date, tags } = data;
 const jsDate = new Date(date);
 ---
 
-<Home title={title}>
+<Home title={title} active="posts">
   <h1 class="mb-0">{title}</h1>
   <p class="flex gap-2">
     {date && <span>{jsDate.toLocaleDateString()}</span>}

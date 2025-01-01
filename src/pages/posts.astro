@@ -6,7 +6,7 @@ import { getCollection } from "astro:content";
 const posts = await getCollection("posts");
 ---
 
-<Home>
+<Home title="Posts" active="posts">
   <h1>Posts</h1>
   {
     posts.map((p) => {

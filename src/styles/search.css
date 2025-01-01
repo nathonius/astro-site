@@ -1,0 +1,25 @@
+.pagefind-ui__form {
+  @apply gap-2;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "i b"
+    "r r";
+}
+
+.pagefind-ui__search-input {
+  grid-area: i;
+  @apply input;
+  @apply input-bordered;
+  @apply w-full;
+}
+
+.pagefind-ui__search-clear {
+  grid-area: b;
+  @apply btn btn-primary;
+}
+
+.pagefind-ui__result-excerpt mark {
+  @apply bg-primary;
+  @apply text-primary-content;
+}
