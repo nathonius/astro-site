@@ -1,0 +1,25 @@
+---
+import { jsxJoin } from "../utils/jsx-join";
+interface Props {
+  tags: string[];
+  filter?: string[];
+}
+const { tags, filter } = Astro.props;
+const _filterTags = !filter || filter.length === 0 ? ["post"] : filter;
+const displayTags = tags.filter((t) => !_filterTags.includes(t));
+---
+
+{
+  // All tags except the last one
+  displayTags.slice(0, displayTags.length - 1).map((t) => (
+    <>
+      <a href={`/tagged/${t}/`}>{t}</a>,{" "}
+    </>
+  ))
+}
+{
+  // Last tag has no comma
+  displayTags
+    .slice(displayTags.length - 1)
+    .map((t) => <a href={`/tagged/${t}/`}>{t}</a>)
+}

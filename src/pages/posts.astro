@@ -1,16 +1,12 @@
 ---
 import Home from "../layouts/Home.astro";
-import PostEntry from "../components/PostEntry.astro";
 import { getCollection } from "astro:content";
+import PostList from "../components/PostList.astro";
 
 const posts = await getCollection("posts");
 ---
 
 <Home title="Posts" active="posts">
   <h1>Posts</h1>
-  {
-    posts.map((p) => {
-      return <PostEntry {...p} />;
-    })
-  }
+  <PostList posts={posts} />
 </Home>

@@ -1,0 +1,33 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, type CollectionEntry } from "astro:content";
+import Home from "../../layouts/Home.astro";
+import PostList from "../../components/PostList.astro";
+
+export const getStaticPaths = (async () => {
+  const allPosts = await getCollection("posts");
+  const tags: Record<string, typeof allPosts> = {};
+  for (const post of allPosts) {
+    for (const tag of post.data.tags) {
+      if (!tags[tag]) {
+        tags[tag] = [post];
+      } else {
+        tags[tag].push(post);
+      }
+    }
+  }
+  return Object.entries(tags).map(([k, v]) => ({
+    params: { tag: k },
+    props: { posts: v },
+  }));
+}) satisfies GetStaticPaths;
+type Props = { posts: CollectionEntry<"posts">[] };
+
+const { posts } = Astro.props;
+const { tag } = Astro.params;
+---
+
+<Home title="Posts" active="posts">
+  <h1>Posts tagged {tag}</h1>
+  <PostList posts={posts} />
+</Home>
