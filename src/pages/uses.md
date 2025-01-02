@@ -18,7 +18,7 @@ summary: All the tools I use on a day-to-day basis
 
 ## Desktop apps
 
-- [Obsidian](https://obsidian.md/) is my absolute favorite tool for taking notes and keeping track of things. I use it every day, and [maintain a number of plugins](./projects.md) for it.
+- [Obsidian](https://obsidian.md/) is my absolute favorite tool for taking notes and keeping track of things. I use it every day, and [maintain a number of plugins](/projects/) for it.
 - [Espanso](https://espanso.org/) is an essential part of my workflow.
 - [Raycast](https://www.raycast.com/) is a better launcher for macOS, while I use [Ulauncher](https://ulauncher.io/) on Linux and [PowerToys Run](https://learn.microsoft.com/en-us/windows/powertoys/run) on Windows.
 - [Rectangle](https://rectangleapp.com/) helps me keep my windows sane on macOS.
