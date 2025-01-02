@@ -16,10 +16,10 @@ const _active = frontmatter?.active ?? active;
 ---
 
 <Base title={_title}>
-  <div class="flex flex-col items-center">
+  <div class="flex flex-col items-center overflow-hidden">
     <Header active={_active} />
     <main
-      class="prose prose-a:text-primary hover:prose-a:text-secondary m-2 min-w-[65ch]"
+      class="prose prose-a:text-primary hover:prose-a:text-secondary m-2 md:min-w-[65ch]"
     >
       <slot />
     </main>
