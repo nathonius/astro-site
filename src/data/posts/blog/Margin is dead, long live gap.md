@@ -7,7 +7,7 @@ draft: false
 tags:
   - css
 ---
-If [the best new CSS function](The%20best%20new%20CSS%20function.md) is `color-mix`, then the best CSS property added in the last ten years is `gap`.
+If [the best new CSS function](/posts/the-best-new-css-function) is `color-mix`, then the best CSS property added in the last ten years is `gap`.
 
 ## Margin hacks begone
 
