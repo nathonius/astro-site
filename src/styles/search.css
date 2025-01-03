@@ -9,9 +9,7 @@
 
 .pagefind-ui__search-input {
   grid-area: i;
-  @apply input;
-  @apply input-bordered;
-  @apply w-full;
+  @apply input input-bordered w-full;
 }
 
 .pagefind-ui__search-clear {
@@ -20,6 +18,5 @@
 }
 
 .pagefind-ui__result-excerpt mark {
-  @apply bg-primary;
-  @apply text-primary-content;
+  @apply bg-primary text-primary-content;
 }
