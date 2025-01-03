@@ -17,3 +17,7 @@ Today I learned... and now I'm sharing with you.
 ## [/ai](/ai/)
 
 How I use (and don't use) AI on this site and in general.
+
+## [/colophon](/colophon/)
+
+Describes how this website is built and hosted.
