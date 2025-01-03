@@ -10,6 +10,9 @@ export default defineConfig({
   server: {
     port: 4200,
   },
+  redirects: {
+    "/til": "/tagged/til",
+  },
   markdown: {
     shikiConfig: {
       transformers: [
