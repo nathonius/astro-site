@@ -4,6 +4,8 @@ import remarkObsidian from "remark-obsidian";
 import tailwind from "@astrojs/tailwind";
 import pagefind from "astro-pagefind";
 
+import preact from "@astrojs/preact";
+
 // https://astro.build/config
 export default defineConfig({
   site: "https://nathan-smith.org",
@@ -37,5 +39,6 @@ export default defineConfig({
   integrations: [
     pagefind(),
     tailwind({ configFile: "tailwind.config.ts", applyBaseStyles: false }),
+    preact(),
   ],
 });
