@@ -1,0 +1,52 @@
+---
+import "../styles/codeblocks.css";
+---
+
+<script type="module">
+  function createHeader(block) {
+    const header = document.createElement("div");
+    block.prepend(header);
+    header.classList.add("code-block-header");
+
+    // Filename
+    const filename = document.createElement("span");
+    header.appendChild(filename);
+    filename.classList.add("code-block-filename");
+    filename.innerText = block.dataset.file ?? "";
+
+    // Copy button
+    const copyCode = document.createElement("button");
+    header.appendChild(copyCode);
+    copyCode.type = "button";
+    copyCode.classList.add("copy-code-button");
+    // Text before clicking
+    const copyText = document.createElement("span");
+    copyCode.appendChild(copyText);
+    copyText.classList.add("copy-text");
+    copyText.innerText = "Copy";
+    // After clicking
+    const copiedText = document.createElement("span");
+    copyCode.appendChild(copiedText);
+    copiedText.classList.add("copied-text");
+    copiedText.innerText = "Copied ✔️";
+
+    return copyCode;
+  }
+
+  function copyCodeHandler(block, copyCode) {
+    const code = block.innerText;
+    navigator.clipboard.writeText(code);
+    copyCode.classList.add("copied");
+    window.setTimeout(() => {
+      copyCode.classList.remove("copied");
+    }, 2000);
+  }
+
+  const codeblocks = document.querySelectorAll("pre");
+  for (const block of codeblocks) {
+    const copyCode = createHeader(block);
+    copyCode.addEventListener("click", () => {
+      copyCodeHandler(block, copyCode);
+    });
+  }
+</script>

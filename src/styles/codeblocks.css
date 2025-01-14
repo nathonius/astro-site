@@ -1,0 +1,30 @@
+pre.astro-code > .code-block-header {
+  display: flex;
+  position: sticky;
+  justify-content: space-between;
+  top: 0;
+  left: 0;
+
+  .code-block-filename {
+    color: color-mix(in srgb, currentcolor 30%, transparent);
+  }
+
+  button.copy-code-button {
+    @apply btn btn-xs btn-ghost;
+    color: color-mix(in srgb, currentcolor 30%, transparent);
+    &:hover {
+      color: currentColor;
+    }
+    .copied-text {
+      display: none;
+    }
+    &.copied {
+      .copied-text {
+        display: inline;
+      }
+      .copy-text {
+        display: none;
+      }
+    }
+  }
+}

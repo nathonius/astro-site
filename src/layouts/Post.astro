@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from "astro:content";
 import PostTags from "../components/PostTags.astro";
+import CopyCode from "../components/CopyCode.astro";
 import Home from "./Home.astro";
 import "../styles/callouts.css";
 
@@ -11,6 +12,7 @@ const jsDate = new Date(date);
 ---
 
 <Home title={title} active="posts">
+  <CopyCode />
   <h1 class="mb-0">{title}</h1>
   <p class="flex gap-2">
     {date && <span>{jsDate.toLocaleDateString()}</span>}

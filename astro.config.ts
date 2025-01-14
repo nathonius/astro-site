@@ -17,7 +17,7 @@ export default defineConfig({
     shikiConfig: {
       transformers: [
         {
-          pre: function () {
+          pre: function (el) {
             // Add data-file="<filename>" ; note this is probably unstable
             const filenameMeta = this.options.meta?.__raw ?? "";
             if (
@@ -26,7 +26,7 @@ export default defineConfig({
               filenameMeta.length > 2
             ) {
               const filename = filenameMeta.slice(2);
-              this.pre.properties.dataFile = filename;
+              el.properties.dataFile = filename;
             }
           },
         },
