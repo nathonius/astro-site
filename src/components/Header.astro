@@ -1,5 +1,5 @@
 ---
-import { SunMoon, Search } from "lucide-astro";
+import { Search, Sun, Moon } from "lucide-astro";
 
 interface Props {
   active?: "home" | "posts" | "projects" | "contact" | "search";
@@ -74,17 +74,22 @@ const { active } = Astro.props;
         <Search />
       </a>
       <div class="tooltip tooltip-bottom" data-tip="Toggle theme">
-        <button
+        <label
           id="header--theme-toggle"
-          type="button"
-          class="btn btn-ghost hidden md:flex"
+          role="button"
+          class="btn btn-ghost swap swap-rotate hidden md:inline-grid"
           aria-label="Toggle theme"
         >
-          <SunMoon />
-        </button>
+          <input type="checkbox" />
+          <Sun class="swap-on" />
+          <Moon class="swap-off" />
+        </label>
         <script>
-          const themeToggle = document.querySelector("#header--theme-toggle");
-          themeToggle?.addEventListener("click", () => {
+          const themeToggle = document.querySelector<HTMLInputElement>(
+            "#header--theme-toggle > input"
+          );
+          themeToggle!.checked = (window as any).theme.get() === "emerald";
+          themeToggle!.addEventListener("change", (event) => {
             (window as any).theme.toggle();
           });
         </script>
