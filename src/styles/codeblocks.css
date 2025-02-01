@@ -1,3 +1,4 @@
+@reference "./root.css";
 pre.astro-code > .code-block-header {
   display: flex;
   position: sticky;
