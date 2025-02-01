@@ -14,17 +14,18 @@ const { active } = Astro.props;
     aria-label="Primary navigation"
   >
     <a
-      class:list={["btn btn-ghost", { "btn-active": active === "home" }]}
+      class:list={[
+        "btn",
+        { "btn-ghost": active !== "home", "btn-soft": active === "home" },
+      ]}
       href="/"
     >
       Home
     </a>
     <a
       class:list={[
-        "btn btn-ghost",
-        {
-          "btn-active": active === "posts",
-        },
+        "btn",
+        { "btn-ghost": active !== "posts", "btn-soft": active === "posts" },
       ]}
       href="/posts/"
     >
@@ -32,9 +33,10 @@ const { active } = Astro.props;
     </a>
     <a
       class:list={[
-        "btn btn-ghost",
+        "btn",
         {
-          "btn-active": active === "projects",
+          "btn-ghost": active !== "projects",
+          "btn-soft": active === "projects",
         },
       ]}
       href="/projects/"
@@ -43,10 +45,8 @@ const { active } = Astro.props;
     </a>
     <a
       class:list={[
-        "btn btn-ghost hidden md:flex",
-        {
-          "btn-active": active === "contact",
-        },
+        "btn hidden md:flex",
+        { "btn-ghost": active !== "contact", "btn-soft": active === "contact" },
       ]}
       href="/contact/"
     >
@@ -54,10 +54,8 @@ const { active } = Astro.props;
     </a>
     <a
       class:list={[
-        "btn btn-ghost hidden md:flex",
-        {
-          "btn-active": active === "search",
-        },
+        "btn hidden md:flex",
+        { "btn-ghost": active !== "search", "btn-soft": active === "search" },
       ]}
       href="/search/"
     >
@@ -68,10 +66,8 @@ const { active } = Astro.props;
         id="search-icon"
         href="/search/"
         class:list={[
-          "btn btn-ghost md:hidden",
-          {
-            "btn-active": active === "search",
-          },
+          "btn md:hidden",
+          { "btn-ghost": active !== "search", "btn-soft": active === "search" },
         ]}
       >
         <span class="sr-only">Search</span>
