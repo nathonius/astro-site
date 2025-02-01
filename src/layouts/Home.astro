@@ -16,7 +16,7 @@ const _active = frontmatter?.active ?? active;
 ---
 
 <Base title={_title}>
-  <div class="flex flex-col items-center overflow-hidden">
+  <div class="flex flex-col items-center overflow-hidden min-h-[100vh]">
     <Header active={_active} />
     <main
       class="prose prose-a:text-primary prose-a:hover:text-secondary m-2 md:min-w-[65ch]"
