@@ -1,5 +1,4 @@
 import type { Config } from "tailwindcss";
-import daisyui from "daisyui";
 import typography from "@tailwindcss/typography";
 import defaultTheme from "tailwindcss/defaultTheme";
 
@@ -12,8 +11,5 @@ export default {
       },
     },
   },
-  plugins: [typography, daisyui],
-  daisyui: {
-    themes: ["emerald", "dark"],
-  },
+  plugins: [typography],
 } satisfies Config;

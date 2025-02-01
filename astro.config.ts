@@ -1,18 +1,22 @@
 import { defineConfig } from "astro/config";
 
 import remarkObsidian from "remark-obsidian";
-import tailwind from "@astrojs/tailwind";
 import pagefind from "astro-pagefind";
+
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://nathan-smith.org",
+
   server: {
     port: 4200,
   },
+
   redirects: {
     "/til": "/tagged/til",
   },
+
   markdown: {
     shikiConfig: {
       transformers: [
@@ -34,8 +38,10 @@ export default defineConfig({
     },
     remarkPlugins: [remarkObsidian],
   },
-  integrations: [
-    pagefind(),
-    tailwind({ configFile: "tailwind.config.ts", applyBaseStyles: false }),
-  ],
+
+  integrations: [pagefind()],
+
+  vite: {
+    plugins: [tailwindcss()],
+  },
 });
