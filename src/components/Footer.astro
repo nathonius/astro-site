@@ -1,10 +1,13 @@
 <footer class="mt-auto mb-2">
-  <nav
-    aria-label="Footer navigation"
-    class="flex flex-col gap-1 items-center md:flex-row md:gap-4 prose"
-  >
-    <span>© Nathan Smith {new Date().toLocaleDateString()}</span>
-    <a href={new URL("feed.xml", Astro.site)}>RSS</a>
-    <a href="/contact/">Contact</a>
-  </nav>
+    <div class="h-card hidden">
+        <a class="p-name u-url" href="https://nathan-smith.org">Nathan Smith</a>
+    </div>
+    <nav
+        aria-label="Footer navigation"
+        class="flex flex-col gap-1 items-center md:flex-row md:gap-4 prose"
+    >
+        <span>© Nathan Smith {new Date().toLocaleDateString()}</span>
+        <a href={new URL("feed.xml", Astro.site)}>RSS</a>
+        <a href="/contact/">Contact</a>
+    </nav>
 </footer>

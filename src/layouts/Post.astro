@@ -12,20 +12,28 @@ const jsDate = new Date(date);
 ---
 
 <Home title={title} active="posts">
-  <CopyCode />
-  <h1 class="mb-0">{title}</h1>
-  <p class="flex gap-2">
-    {date && <span>{jsDate.toLocaleDateString()}</span>}
-    <span aria-hidden="true">/</span>
-    {
-      tags.length > 0 && (
-        <span>
-          tagged: <PostTags tags={tags} />
-        </span>
-      )
-    }
-  </p>
-  <div class="prose">
-    <slot />
-  </div>
+    <CopyCode />
+    <article class="h-entry">
+        <h1 class="p-name mb-0">{title}</h1>
+        <p class="flex gap-2">
+            {
+                date && (
+                    <time class="dt-published" datetime={jsDate.toISOString()}>
+                        {jsDate.toLocaleDateString()}
+                    </time>
+                )
+            }
+            <span aria-hidden="true">/</span>
+            {
+                tags.length > 0 && (
+                    <span>
+                        tagged: <PostTags tags={tags} />
+                    </span>
+                )
+            }
+        </p>
+        <div class="e-content prose">
+            <slot />
+        </div>
+    </article>
 </Home>
