@@ -3,15 +3,24 @@ import type { CollectionEntry } from "astro:content";
 import PostTags from "../components/PostTags.astro";
 import CopyCode from "../components/CopyCode.astro";
 import Home from "./Home.astro";
+import SEO, { type SEOProps } from "../components/SEO.astro";
 import "../styles/callouts.css";
 
 type Props = CollectionEntry<"posts">;
 const { data } = Astro.props;
-const { title, date, tags, summary } = data;
+const { title, date, tags, summary, update_date } = data;
 const jsDate = new Date(date);
+const article: SEOProps["article"] = {
+  published_time: jsDate.toISOString(),
+  modified_time: update_date ? new Date(update_date).toISOString() : undefined,
+  tags,
+};
 ---
 
 <Home title={title} active="posts">
+  <Fragment slot="head">
+    <SEO title={title} article={article} description={summary} />
+  </Fragment>
   <CopyCode />
   <article class="h-entry">
     <h1 class="p-name mb-0">{title}</h1>
