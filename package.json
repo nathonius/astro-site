@@ -13,7 +13,7 @@
     "@pagefind/default-ui": "^1.3.0",
     "@tailwindcss/typography": "^0.5.16",
     "@tailwindcss/vite": "^4.0.3",
-    "astro": "^5.12.9",
+    "astro": "^5.14.6",
     "astro-pagefind": "^1.8.0",
     "lucide-astro": "^0.473.0",
     "pagefind": "^1.3.0",
