@@ -6,7 +6,6 @@ import {
   SignOutButton,
   useAuth,
 } from "@clerk/astro/react";
-import { Trash } from "lucide-react";
 import {
   useEffect,
   useState,
