@@ -1,13 +1,22 @@
-import { defineConfig } from "astro/config";
-
+import { defineConfig, envField } from "astro/config";
+import clerk from "@clerk/astro";
 import remarkObsidian from "remark-obsidian";
 import pagefind from "astro-pagefind";
-
 import tailwindcss from "@tailwindcss/vite";
+import react from "@astrojs/react";
 
 // https://astro.build/config
 export default defineConfig({
   site: "https://nathan-smith.org",
+
+  env: {
+    schema: {
+      PUBLIC_COMMENT_SERVER: envField.string({
+        context: "client",
+        access: "public",
+      }),
+    },
+  },
 
   server: {
     port: 4200,
@@ -39,7 +48,7 @@ export default defineConfig({
     remarkPlugins: [remarkObsidian],
   },
 
-  integrations: [pagefind()],
+  integrations: [pagefind(), clerk(), react()],
 
   vite: {
     plugins: [tailwindcss()],

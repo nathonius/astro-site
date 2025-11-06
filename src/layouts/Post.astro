@@ -4,11 +4,13 @@ import PostTags from "../components/PostTags.astro";
 import CopyCode from "../components/CopyCode.astro";
 import Home from "./Home.astro";
 import SEO, { type SEOProps } from "../components/SEO.astro";
+import { PostComments } from "../components/PostComments.tsx";
+import { PUBLIC_COMMENT_SERVER } from "astro:env/client";
 import "../styles/callouts.css";
 
 type Props = CollectionEntry<"posts">;
 const { data } = Astro.props;
-const { title, date, tags, summary, update_date } = data;
+const { title, date, tags, summary, update_date, slug } = data;
 const jsDate = new Date(date);
 const article: SEOProps["article"] = {
   published_time: jsDate.toISOString(),
@@ -46,4 +48,9 @@ const article: SEOProps["article"] = {
       <slot />
     </div>
   </article>
+  <PostComments
+    client:only="react"
+    slug={slug}
+    commentServer={PUBLIC_COMMENT_SERVER}
+  />
 </Home>
